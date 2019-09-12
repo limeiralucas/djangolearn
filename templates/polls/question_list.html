@@ -1,0 +1,8 @@
+<h1>Question</h1>
+<ul>
+{% for question in object_list %}
+    <li>{{ question.pub_date|date }} - {{ questio.question_text }}</li>
+{% empty %}
+    <li>No questions yet.</li>
+{% endfor %}
+</ul>
