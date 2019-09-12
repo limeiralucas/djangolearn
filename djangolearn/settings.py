@@ -78,8 +78,12 @@ WSGI_APPLICATION = 'djangolearn.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': os.environ.get('DB_NAME', 'djangolearn'),
+        'USER': os.environ.get('DB_USER', 'default_user'),
+        'PASSWORD': os.environ.get('DB_PASS', 'default_pw'),
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
     }
 }
 
